@@ -2,10 +2,18 @@ version: '3'
 services:
   # mocha (mount all files for testing)
   mocha:
+    # image: node:9.9.0-alpine
     build: .docker/mocha
+    working_dir: /mocha
     volumes:
       - .:/mocha/
-      - /mocha/node_modules
+      # - /mocha/node_modules
+    environment:
+      - MYSQL_HOSTNAME=db
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=oreilly
+    depends_on:
+      - db
 
   # MySQL
   db:

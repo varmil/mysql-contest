@@ -3,6 +3,7 @@ Exercises with Node.js and MySQL
 
 ### Install
 ```sh
+npm i
 docker-compose up -d
 ```
 

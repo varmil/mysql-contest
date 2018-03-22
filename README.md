@@ -8,5 +8,6 @@ docker-compose up -d
 
 ### run tests
 ```sh
-docker-compose run --rm mocha mocha /mocha/tests/unit/index.js -R tap
+# use --exit option for workaround of not exit mocha issue
+docker-compose run --rm mocha mocha /mocha/tests/unit/index.js -R tap --exit
 ```

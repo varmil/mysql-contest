@@ -8,9 +8,7 @@
   },
   "scripts": {
     "test": "mocha /mocha/tests/unit/index.js --watch",
-    "tap": "mocha /mocha/tests/unit/index.js -R tap --exit > output.log",
-    "curl": "./send-result.sh output.log",
-    "send": "npm run tap && npm run curl"
+    "tap": "mocha /mocha/tests/unit/index.js -R tap --exit > output.log"
   },
   "author": "",
   "license": "ISC",

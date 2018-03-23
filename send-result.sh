@@ -14,14 +14,19 @@ if [ -e $result_file ]; then
     # 結果の読み込み
     result=$(<${result_file})
 
-    # サーバーへのPUT (curl -f で失敗時に検出できるように)
+    # for debug
+    # url="http://localhost:5000"
     url="http://yonno.cygames.jp:8081/users/$USERNAME/contest/mysql"
-    curl -X PUT -d "result=$result" -f $url
+
+    # サーバーへのPUT (curl -f で失敗時に検出できるように)
+    curl -X PUT --data-binary "@${result_file}" -f $url
     if [ $? = 0 ]; then
         echo "[send ok] $url"
     else
         echo "[send failed] status:$?, url:$url"
+        exit 1
     fi
 else
     echo "${result_file} does not exists. Please run the tests first"
+    exit 1
 fi

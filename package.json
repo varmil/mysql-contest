@@ -7,7 +7,8 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "mocha /mocha/tests/unit/index.js -R tap --exit"
+    "test": "mocha /mocha/tests/unit/index.js --watch",
+    "send": "mocha /mocha/tests/unit/index.js -R tap --exit"
   },
   "author": "",
   "license": "ISC",

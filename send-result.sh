@@ -11,9 +11,6 @@ source "${script_dir}/conf.txt"
 
 # 結果ファイルの送信
 if [ -e $result_file ]; then
-    # 結果の読み込み
-    result=$(<${result_file})
-
     # for debug
     # url="http://localhost:5000"
     url="http://yonno.cygames.jp:8081/users/$USERNAME/contest/mysql"

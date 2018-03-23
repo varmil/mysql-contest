@@ -1,6 +1,11 @@
 # mysql-contest
 Exercises with Node.js and MySQL
 
+### Requirement
+* node >= 8.9.1
+* docker >= 17.09
+* docker-compose >= 1.17.1
+
 ### Install
 ```sh
 npm i

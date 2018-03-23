@@ -28,3 +28,11 @@ exports.c3p2 = async () => {
     throw error
   }
 }
+
+exports.c3p3 = async () => {
+  try {
+    return await db.query(`SELECT * FROM account LIMIT 3`)
+  } catch (error) {
+    throw error
+  }
+}

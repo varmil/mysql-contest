@@ -47,4 +47,9 @@ describe('Chapter 3', () => {
     const actual = await target.c3p2()
     assertDeepEqual(actual, answer.c3p2)
   })
+
+  it('#c3p3() --- __4', async () => {
+    const actual = await target.c3p3()
+    assertDeepEqual(actual, answer.c3p3)
+  })
 })

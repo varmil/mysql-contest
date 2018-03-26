@@ -134,15 +134,15 @@ describe('Chapter 9', () => {
   })
 
   it('#c9p3() 各行員の経験度を表示するために、以下のクエリをemployeeテーブルに結合する。  __18', async () => {
-		/* SELECT 'trainee' name, '2004-01-01' start_dt, '2005-12-31' end_dt 
-		 * UNION ALL
-		 * SELECT 'worker' name, '2002-01-01' start_dt, '2003-12-31' end_dt
-		 * UNION ALL
-		 * SELECT 'mentor' name, '2000-01-01' start_dt, '2001-12-31' end_dt
-		 * 
-		 * サブクエリは"levels"というエイリアスを持ち、行員ID、姓名、経験度(levels.name)が含まれているものとする。
-		 * ヒント:employee.start_date列がどの経験度に属するかを判断する不等価条件に基づいて、結合条件を作成する。
-		 */
+    /* SELECT 'trainee' name, '2004-01-01' start_dt, '2005-12-31' end_dt 
+     * UNION ALL
+     * SELECT 'worker' name, '2002-01-01' start_dt, '2003-12-31' end_dt
+     * UNION ALL
+     * SELECT 'mentor' name, '2000-01-01' start_dt, '2001-12-31' end_dt
+     * 
+     * サブクエリは"levels"というエイリアスを持ち、行員ID、姓名、経験度(levels.name)が含まれているものとする。
+     * ヒント:employee.start_date列がどの経験度に属するかを判断する不等価条件に基づいて、結合条件を作成する。
+     */
     const actual = await target.c9p3()
     assertDeepEqual(actual, answer.c9p3)
   })

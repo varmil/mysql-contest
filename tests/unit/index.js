@@ -121,9 +121,9 @@ describe('Chapter 8', () => {
 
 describe('Chapter 9', () => {
   it('#c9p1() accountテーブルから口座ID、商品コード、顧客ID、口座の残高を取得するためのクエリを作成する。ただし、下記の要件に従うこと。  __16', async () => {
-		/* このクエリでは、フィルタ条件と、productテーブルから全てのローン口座(product.product_type_cd = 'LOAN')を
-		 * 検索するための非相関サブクエリを使用する。
-		 */
+    /* このクエリでは、フィルタ条件と、productテーブルから全てのローン口座(product.product_type_cd = 'LOAN')を
+     * 検索するための非相関サブクエリを使用する。
+     */
     const actual = await target.c9p1()
     assertDeepEqual(actual, answer.c9p1)
   })

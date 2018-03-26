@@ -156,3 +156,43 @@ exports.c9p4 = async () => {
     throw error
   }
 }
+
+exports.c10p1 = async () => {
+  try {
+    return await db.query(`SELECT p.product_cd, a.account_id, a.cust_id, a.avail_balance FROM product p LEFT OUTER JOIN account a ON p.product_cd = a.product_cd`)
+  } catch (error) {
+    throw error
+  }
+}
+
+exports.c10p2 = async () => {
+  try {
+    return await db.query(`SELECT p.product_cd, a.account_id, a.cust_id, a.avail_balance FROM account a RIGHT OUTER JOIN product p ON p.product_cd = a.product_cd`)
+  } catch (error) {
+    throw error
+  }
+}
+
+exports.c10p3 = async () => {
+  try {
+    return await db.query(`SELECT a.account_id, a.product_cd, i.fname, i.lname, b.name FROM account a LEFT OUTER JOIN business b ON a.cust_id = b.cust_id LEFT OUTER JOIN individual i ON a.cust_id = i.cust_id`)
+  } catch (error) {
+    throw error
+  }
+}
+
+exports.c11p1 = async () => {
+  try {
+    return await db.query(`SELECT emp_id, case WHEN title LIKE '%President' OR title = 'Loan Manager' OR title = 'Treasurer' THEN 'Management' WHEN title LIKE '%Teller' OR title = 'Operations Manager' THEN 'Operations' ELSE 'Unknown' END title FROM employee`)
+  } catch (error) {
+    throw error
+  }
+}
+
+exports.c11p2 = async () => {
+  try {
+    return await db.query(`SELECT SUM(CASE WHEN open_branch_id = 1 THEN 1 ELSE 0 END) branch_1, SUM(CASE WHEN open_branch_id = 2 THEN 1 ELSE 0 END) branch_2, SUM(CASE WHEN open_branch_id = 3 THEN 1 ELSE 0 END) branch_3, SUM(CASE WHEN open_branch_id = 4 THEN 1 ELSE 0 END) branch_4 FROM account`)
+  } catch (error) {
+    throw error
+  }
+}

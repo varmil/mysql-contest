@@ -153,3 +153,56 @@ describe('Chapter 9', () => {
   })
 })
 
+describe('Chapter 10', () => {
+  it('#c10p1() すべての商品名とその商品に基づく口座を全て習得するためのクエリを作成する。ただし下記の要件に従うこと。  __20', async () => {
+    /* accountテーブルのproduct_cd列に基づいてproductテーブルをリンクする。
+     * その商品の口座が開かれていない場合であっても、すべての商品が含まれるようにする。
+     */
+    const actual = await target.c10p1()
+    assertDeepEqual(actual, answer.c10p1)
+  })
+
+  it('#c10p2() 上記問題(10-1)のクエリを、他の外部結合を使用して、同じ結果が得られるように書き換える。(例えば10-1でleft outer joinを使用した場合は、right outer joinを使用する)  __21', async () => {
+    const actual = await target.c10p2()
+    assertDeepEqual(actual, answer.c10p2)
+  })
+
+  it('#c10p3() accountテーブルを(account.cust_id列に基づいて)individualテーブルとbusinessテーブルに外部結合せよ。ただし下記の要件に従うこと。  __22', async () => {
+    /* 結果セットが口座ごとに1行のデータで構成されるようにする。
+     * 結果セットに含まれる列は、account.account_id, account.product_cd, individual.fname, individual.lname, business.nameとする。
+     */
+    const actual = await target.c10p3()
+    assertDeepEqual(actual, answer.c10p3)
+  })
+})
+
+describe('Chapter 11', () => {
+  it('#c11p1() 単純case式を使用している以下のクエリを書き換えて、検索case式を使用して同じ結果が得られるようにする。where節の数はできるだけ少なくすること。  __23', async () => {
+    /* SELECT emp_id,
+     *   CASE title
+     *     WHEN 'President' THEN 'Management'
+     *     WHEN 'Vice President' THEN 'Management'
+     *     WHEN 'Treasurer' THEN 'Management'
+     *     WHEN 'Loan Manager' THEN 'Management'
+     *     WHEN 'Operations Manager' THEN 'Operations'
+     *     WHEN 'Head Teller' THEN 'Operations'
+     *     WHEN 'Teller' THEN 'Operations'
+     *     ELSE 'Unknown'
+     *   END title
+     * FROM employee;
+     */
+    const actual = await target.c11p1()
+    assertDeepEqual(actual, answer.c11p1)
+  })
+
+  it('#c11p2() 以下のクエリを書き換えて結果セットに4つの列(支店ごとに１つ)からなる行が１つだけ含まれるようにする。この4つの列には、branch_1 〜 branch_4という名前をつける。  __24', async () => {
+    /* SELECT open_branch_id, COUNT(*)
+     * FROM account
+     * GROUP BY open_branch_id;
+     */
+    const actual = await target.c11p2()
+    assertDeepEqual(actual, answer.c11p2)
+  })
+
+})
+

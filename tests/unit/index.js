@@ -91,7 +91,7 @@ describe(`Chapter 6`, () => {
 })
 
 describe(`Chapter 7`, () => {
-  it(`#c7p1() 文字列\"Please find the substring in this string\"の17文字目から25文字目までの文字列を返すクエリを作成する。  __11`, async () => {
+  it(`#c7p1() 文字列"Please find the substring in this string"の17文字目から25文字目までの文字列を返すクエリを作成する。  __11`, async () => {
     const actual = await target.c7p1()
     assertDeepEqual(actual, answer.c7p1)
   })

@@ -108,19 +108,19 @@ describe(`Chapter 8`, () => {
     assertDeepEqual(actual, answer.c8p1)
   })
 
-  it(`#c8p2() 上記問題(8-1)のクエリを、下記Aの部分を埋めて各顧客が開いている口座の数をカウントするものに書き換える。顧客ごとに、顧客IDと口座の数を表示する。  __14`, async () => {
+  it(`#c8p2() 上記問題(8-1)のクエリを、下記???の部分を埋めて各顧客が開いている口座の数をカウントするものに書き換える。顧客ごとに、顧客IDと口座の数を表示する。  __14`, async () => {
     /* SELECT cust_id, COUNT(*)
      * FROM account
-     * (  A  )
+     * ???
      */
     const actual = await target.c8p2()
     assertDeepEqual(actual, answer.c8p2)
   })
 
-  it(`#c8p3() 上記問題(8-2)のクエリを、下記Aの部分を埋めて口座を２つ以上開いている顧客だけを表示するように書き換える。  __15`, async () => {
+  it(`#c8p3() 上記問題(8-2)のクエリを、下記???の部分を埋めて口座を２つ以上開いている顧客だけを表示するように書き換える。  __15`, async () => {
     /* SELECT cust_id, COUNT(*)
      * FROM account
-     * (  A  )
+     * ???
      */
     const actual = await target.c8p3()
     assertDeepEqual(actual, answer.c8p3)
@@ -136,10 +136,10 @@ describe(`Chapter 9`, () => {
     assertDeepEqual(actual, answer.c9p1)
   })
 
-  it(`#c9p2() 上記問題(9-1)のクエリを、下記Aの部分を埋めてproductテーブルへの相関サブクエリを使って同じ結果を得るものに書き換える。  __17`, async () => {
+  it(`#c9p2() 上記問題(9-1)のクエリを、下記???の部分を埋めてproductテーブルへの相関サブクエリを使って同じ結果を得るものに書き換える。  __17`, async () => {
     /* SELECT a.account_id, a.product_cd, a.cust_id, a.avail_balance
      * FROM account a
-     * WHERE EXISTS ( A )
+     * WHERE EXISTS ( ??? )
      */
     const actual = await target.c9p2()
     assertDeepEqual(actual, answer.c9p2)
@@ -174,9 +174,9 @@ describe(`Chapter 10`, () => {
     assertDeepEqual(actual, answer.c10p1)
   })
 
-  it(`#c10p2() 上記問題(10-1)のクエリを、下記Aの部分を埋めて他の外部結合を使用して、同じ結果が得られるように書き換える。(例えば10-1でleft outer joinを使用した場合は、right outer joinを使用する)  __21`, async () => {
+  it(`#c10p2() 上記問題(10-1)のクエリを、下記???の部分を埋めて他の外部結合を使用して、同じ結果が得られるように書き換える。(例えば10-1でleft outer joinを使用した場合は、right outer joinを使用する)  __21`, async () => {
     /* SELECT p.product_cd, a.account_id, a.cust_id, a.avail_balance
-     * (A)
+     * ???
      * ON p.product_cd = a.product_cd;
      */
     const actual = await target.c10p2()

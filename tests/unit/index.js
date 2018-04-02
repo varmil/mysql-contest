@@ -38,7 +38,7 @@ describe(`EXAMPLE - 初期状態でこのテストは通ります`, () => {
 })
 
 describe(`Chapter 3`, () => {
-  it(`#c3p1() すべての行員の行員IDと姓名を取得し、性、名の優先順位で並べ替える。 __2`, async () => {
+  it(`#c3p1() すべての行員の行員IDと姓名を取得し、姓、名の優先順位で並べ替える。 __2`, async () => {
     const actual = await target.c3p1()
     assertDeepEqual(actual, answer.c3p1)
   })
@@ -84,19 +84,23 @@ describe(`Chapter 6`, () => {
     assertDeepEqual(actual, answer.c6p2)
   })
 
-  it(`#c6p3() 上記問題(6-2)の結果をlname列で並べ替える。  __10`, async () => {
+  it(`#c6p3() 上記問題(6-2)の結果をlname列、fname列の順で並べ替える。  __10`, async () => {
     const actual = await target.c6p3()
     assertDeepEqual(actual, answer.c6p3)
   })
 })
 
 describe(`Chapter 7`, () => {
-  it(`#c7p1() 文字列"Please find the substring in this string"の17文字目から25文字目までの文字列を返すクエリを作成する。  __11`, async () => {
+  it(`#c7p1() 文字列"Please find the substring in this string"の17文字目から25文字目までの文字列（カラム名は"c7p1"とする）を返すクエリを作成する。  __11`, async () => {
     const actual = await target.c7p1()
     assertDeepEqual(actual, answer.c7p1)
   })
 
-  it(`#c7p2() −25.76823の絶対値と符号(-1, 0, または1)を返すクエリを作成する。また、小数点以下2桁で丸めた値を返す。  __12`, async () => {
+  it(`#c7p2() −25.76823の絶対値と符号(-1, 0, または1)を返すクエリを作成する。また、小数点以下2桁で丸めた値を返す。それぞれのカラム名は下記に従う。  __12`, async () => {
+    /* 絶対値を返す ... カラム名("c7p2_a")
+     * 符号を返す ... カラム名("c7p2_b")
+     * 小数点以下2桁で丸める ... カラム名("c7p2_c")
+     */
     const actual = await target.c7p2()
     assertDeepEqual(actual, answer.c7p2)
   })

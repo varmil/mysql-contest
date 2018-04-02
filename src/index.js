@@ -79,7 +79,7 @@ exports.c6p2 = async () => {
 
 exports.c6p3 = async () => {
   try {
-    return await db.query(`SELECT fname, lname FROM individual UNION ALL SELECT fname, lname FROM employee ORDER BY lname`)
+    return await db.query(`SELECT fname, lname FROM individual UNION ALL SELECT fname, lname FROM employee ORDER BY lname, fname`)
   } catch (error) {
     throw error
   }
@@ -87,7 +87,7 @@ exports.c6p3 = async () => {
 
 exports.c7p1 = async () => {
   try {
-    return await db.query(`SELECT SUBSTRING('Please find the substring in this string',17,9)`)
+    return await db.query(`SELECT SUBSTRING('Please find the substring in this string',17,9) c7p1`)
   } catch (error) {
     throw error
   }
@@ -95,7 +95,7 @@ exports.c7p1 = async () => {
 
 exports.c7p2 = async () => {
   try {
-    return await db.query(`SELECT ABS(-25.76823), SIGN(-25.76823), ROUND(-25.76823, 2)`)
+    return await db.query(`SELECT ABS(-25.76823) c7p2_a, SIGN(-25.76823) c7p2_b, ROUND(-25.76823, 2) c7p2_c`)
   } catch (error) {
     throw error
   }

@@ -79,24 +79,19 @@ describe(`Chapter 5`, () => {
 })
 
 describe(`Chapter 6`, () => {
-  it(`#c6p2() 個人顧客全員の姓名と行員全員の生命を検索する複合クエリを作成する。  __9`, async () => {
-    const actual = await target.c6p2()
-    assertDeepEqual(actual, answer.c6p2)
-  })
-
-  it(`#c6p3() 上記問題(6-2)の結果をlname列、fname列の順で並べ替える。  __10`, async () => {
+  it(`#c6p3() 個人顧客全員の姓名と行員全員の生命を検索する複合クエリを作成する。ただし、lname列、fname列の順で並べ替える。  __9`, async () => {
     const actual = await target.c6p3()
     assertDeepEqual(actual, answer.c6p3)
   })
 })
 
 describe(`Chapter 7`, () => {
-  it(`#c7p1() 文字列"Please find the substring in this string"の17文字目から25文字目までの文字列（カラム名は"c7p1"とする）を返すクエリを作成する。  __11`, async () => {
+  it(`#c7p1() 文字列"Please find the substring in this string"の17文字目から25文字目までの文字列（カラム名は"c7p1"とする）を返すクエリを作成する。  __10`, async () => {
     const actual = await target.c7p1()
     assertDeepEqual(actual, answer.c7p1)
   })
 
-  it(`#c7p2() −25.76823の絶対値と符号(-1, 0, または1)を返すクエリを作成する。また、小数点以下2桁で丸めた値を返す。それぞれのカラム名は下記に従う。  __12`, async () => {
+  it(`#c7p2() −25.76823の絶対値と符号(-1, 0, または1)を返すクエリを作成する。また、小数点以下2桁で丸めた値を返す。それぞれのカラム名は下記に従う。  __11`, async () => {
     /* 絶対値を返す ... カラム名("c7p2_a")
      * 符号を返す ... カラム名("c7p2_b")
      * 小数点以下2桁で丸める ... カラム名("c7p2_c")
@@ -107,12 +102,12 @@ describe(`Chapter 7`, () => {
 })
 
 describe(`Chapter 8`, () => {
-  it(`#c8p1() accountテーブルの行の数をカウントするクエリを作成する。  __13`, async () => {
+  it(`#c8p1() accountテーブルの行の数をカウントするクエリを作成する。  __12`, async () => {
     const actual = await target.c8p1()
     assertDeepEqual(actual, answer.c8p1)
   })
 
-  it(`#c8p2() 上記問題(8-1)のクエリを、下記???の部分を埋めて各顧客が開いている口座の数をカウントするものに書き換える。顧客ごとに、顧客IDと口座の数を表示する。  __14`, async () => {
+  it(`#c8p2() 上記問題(8-1)のクエリを、下記???の部分を埋めて各顧客が開いている口座の数をカウントするものに書き換える。顧客ごとに、顧客IDと口座の数を表示する。  __13`, async () => {
     /* SELECT cust_id, COUNT(*)
      * FROM account
      * ???
@@ -121,7 +116,7 @@ describe(`Chapter 8`, () => {
     assertDeepEqual(actual, answer.c8p2)
   })
 
-  it(`#c8p3() 上記問題(8-2)のクエリを、下記???の部分を埋めて口座を２つ以上開いている顧客だけを表示するように書き換える。  __15`, async () => {
+  it(`#c8p3() 上記問題(8-2)のクエリを、下記???の部分を埋めて口座を２つ以上開いている顧客だけを表示するように書き換える。  __14`, async () => {
     /* SELECT cust_id, COUNT(*)
      * FROM account
      * ???
@@ -132,7 +127,7 @@ describe(`Chapter 8`, () => {
 })
 
 describe(`Chapter 9`, () => {
-  it(`#c9p1() accountテーブルから口座ID、商品コード、顧客ID、口座の残高を取得するためのクエリを作成する。ただし、下記の要件に従うこと。  __16`, async () => {
+  it(`#c9p1() accountテーブルから口座ID、商品コード、顧客ID、口座の残高を取得するためのクエリを作成する。ただし、下記の要件に従うこと。  __15`, async () => {
     /* このクエリでは、フィルタ条件と、productテーブルから全てのローン口座(product.product_type_cd = 'LOAN')を
      * 検索するための非相関サブクエリを使用する。
      */
@@ -140,7 +135,7 @@ describe(`Chapter 9`, () => {
     assertDeepEqual(actual, answer.c9p1)
   })
 
-  it(`#c9p2() 上記問題(9-1)のクエリを、下記???の部分を埋めてproductテーブルへの相関サブクエリを使って同じ結果を得るものに書き換える。  __17`, async () => {
+  it(`#c9p2() 上記問題(9-1)のクエリを、下記???の部分を埋めてproductテーブルへの相関サブクエリを使って同じ結果を得るものに書き換える。  __16`, async () => {
     /* SELECT a.account_id, a.product_cd, a.cust_id, a.avail_balance
      * FROM account a
      * WHERE EXISTS ( ??? )
@@ -149,7 +144,7 @@ describe(`Chapter 9`, () => {
     assertDeepEqual(actual, answer.c9p2)
   })
 
-  it(`#c9p3() 各行員の経験度を表示するために、以下のクエリをemployeeテーブルに結合する。  __18`, async () => {
+  it(`#c9p3() 各行員の経験度を表示するために、以下のクエリをemployeeテーブルに結合する。  __17`, async () => {
     /* SELECT 'trainee' name, '2004-01-01' start_dt, '2005-12-31' end_dt 
      * UNION ALL
      * SELECT 'worker' name, '2002-01-01' start_dt, '2003-12-31' end_dt
@@ -163,14 +158,14 @@ describe(`Chapter 9`, () => {
     assertDeepEqual(actual, answer.c9p3)
   })
 
-  it(`#c9p4() employeeテーブルから行員IDと姓名を取得し、行員が配属されている部署と支店の名前を取得するためのクエリを作成する。ただし、テーブルを結合してはならない。  __19`, async () => {
+  it(`#c9p4() employeeテーブルから行員IDと姓名を取得し、行員が配属されている部署と支店の名前を取得するためのクエリを作成する。ただし、テーブルを結合してはならない。  __18`, async () => {
     const actual = await target.c9p4()
     assertDeepEqual(actual, answer.c9p4)
   })
 })
 
 describe(`Chapter 10`, () => {
-  it(`#c10p1() すべての商品名とその商品に基づく口座を全て習得するためのクエリを作成する。ただし下記の要件に従うこと。  __20`, async () => {
+  it(`#c10p1() すべての商品名とその商品に基づく口座を全て習得するためのクエリを作成する。ただし下記の要件に従うこと。  __19`, async () => {
     /* accountテーブルのproduct_cd列に基づいてproductテーブルをリンクする。
      * その商品の口座が開かれていない場合であっても、すべての商品が含まれるようにする。
      */
@@ -178,7 +173,7 @@ describe(`Chapter 10`, () => {
     assertDeepEqual(actual, answer.c10p1)
   })
 
-  it(`#c10p2() 上記問題(10-1)のクエリを、下記???の部分を埋めて他の外部結合を使用して、同じ結果が得られるように書き換える。(例えば10-1でleft outer joinを使用した場合は、right outer joinを使用する)  __21`, async () => {
+  it(`#c10p2() 上記問題(10-1)のクエリを、下記???の部分を埋めて他の外部結合を使用して、同じ結果が得られるように書き換える。(例えば10-1でleft outer joinを使用した場合は、right outer joinを使用する)  __20`, async () => {
     /* SELECT p.product_cd, a.account_id, a.cust_id, a.avail_balance
      * ???
      * ON p.product_cd = a.product_cd;
@@ -187,7 +182,7 @@ describe(`Chapter 10`, () => {
     assertDeepEqual(actual, answer.c10p2)
   })
 
-  it(`#c10p3() accountテーブルを(account.cust_id列に基づいて)individualテーブルとbusinessテーブルに外部結合せよ。ただし下記の要件に従うこと。  __22`, async () => {
+  it(`#c10p3() accountテーブルを(account.cust_id列に基づいて)individualテーブルとbusinessテーブルに外部結合せよ。ただし下記の要件に従うこと。  __21`, async () => {
     /* 結果セットが口座ごとに1行のデータで構成されるようにする。
      * 結果セットに含まれる列は、account.account_id, account.product_cd, individual.fname, individual.lname, business.nameとする。
      */
@@ -197,7 +192,7 @@ describe(`Chapter 10`, () => {
 })
 
 describe(`Chapter 11`, () => {
-  it(`#c11p1() 単純case式を使用している以下のクエリを書き換えて、検索case式を使用して同じ結果が得られるようにする。when節の数は２つにすること。  __23`, async () => {
+  it(`#c11p1() 単純case式を使用している以下のクエリを書き換えて、検索case式を使用して同じ結果が得られるようにする。when節の数は２つにすること。  __22`, async () => {
     /* SELECT emp_id,
      *   CASE title
      *     WHEN 'President' THEN 'Management'
@@ -215,7 +210,7 @@ describe(`Chapter 11`, () => {
     assertDeepEqual(actual, answer.c11p1)
   })
 
-  it(`#c11p2() 以下のクエリを書き換えて結果セットに4つの列(支店ごとに１つ)からなる行が１つだけ含まれるようにする。この4つの列には、branch_1 〜 branch_4という名前をつける。  __24`, async () => {
+  it(`#c11p2() 以下のクエリを書き換えて結果セットに4つの列(支店ごとに１つ)からなる行が１つだけ含まれるようにする。この4つの列には、branch_1 〜 branch_4という名前をつける。  __23`, async () => {
     /* SELECT open_branch_id, COUNT(*)
      * FROM account
      * GROUP BY open_branch_id;

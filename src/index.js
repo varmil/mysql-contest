@@ -1,7 +1,8 @@
 /**
  * 回答記述
  * 注1）すべて１クエリで結果が返るようにしなさい。
- * 注2) プライマリーキーで昇順に並べ替えなさい
+ * 注2) ORDER BY指定がない場合、プライマリーキーで昇順に並べ替えなさい。
+ *      ただし、2つ以上のテーブルを結合する場合はexplainを使用して、結合される順番にキーを指定しなさい。
  */
 const { promisify } = require('util')
 const db = require('./database')
@@ -24,7 +25,7 @@ exports.c3p1 = async () => {
 
 exports.c3p2 = async () => {
   try {
-    return await db.query(`SELECT account_id, cust_id, avail_balance FROM account WHERE status = 'ACTIVE' AND avail_balance > 2500 ORDER BY account_id, cust_id ASC`)
+    return await db.query(`SELECT account_id, cust_id, avail_balance FROM account WHERE status = 'ACTIVE' AND avail_balance > 2500 ORDER BY account_id ASC`)
   } catch (error) {
     throw error
   }
@@ -120,7 +121,7 @@ exports.c8p3 = async () => {
 
 exports.c9p1 = async () => {
   try {
-    return await db.query(`SELECT account_id, product_cd, cust_id, avail_balance FROM account WHERE product_cd IN (SELECT product_cd FROM product WHERE product_type_cd = 'LOAN') ORDER BY account_id, product_cd, cust_id ASC`)
+    return await db.query(`SELECT account_id, product_cd, cust_id, avail_balance FROM account WHERE product_cd IN (SELECT product_cd FROM product WHERE product_type_cd = 'LOAN') ORDER BY account_id ASC`)
   } catch (error) {
     throw error
   }
@@ -128,7 +129,7 @@ exports.c9p1 = async () => {
 
 exports.c9p2 = async () => {
   try {
-    return await db.query(`SELECT a.account_id, a.product_cd, a.cust_id, a.avail_balance FROM account a WHERE EXISTS (SELECT 1 FROM product p WHERE p.product_cd = a.product_cd AND p.product_type_cd = 'LOAN') ORDER BY a.account_id, a.product_cd, a.cust_id ASC`)
+    return await db.query(`SELECT a.account_id, a.product_cd, a.cust_id, a.avail_balance FROM account a WHERE EXISTS (SELECT 1 FROM product p WHERE p.product_cd = a.product_cd AND p.product_type_cd = 'LOAN') ORDER BY a.account_id ASC`)
   } catch (error) {
     throw error
   }
@@ -152,7 +153,7 @@ exports.c9p4 = async () => {
 
 exports.c10p1 = async () => {
   try {
-    return await db.query(`SELECT p.product_cd, a.account_id, a.cust_id, a.avail_balance FROM product p LEFT OUTER JOIN account a ON p.product_cd = a.product_cd ORDER BY p.product_cd, a.account_id, a.cust_id ASC`)
+    return await db.query(`SELECT p.product_cd, a.account_id, a.cust_id, a.avail_balance FROM product p LEFT OUTER JOIN account a ON p.product_cd = a.product_cd ORDER BY p.product_cd, a.account_id ASC`)
   } catch (error) {
     throw error
   }
@@ -160,7 +161,7 @@ exports.c10p1 = async () => {
 
 exports.c10p2 = async () => {
   try {
-    return await db.query(`SELECT p.product_cd, a.account_id, a.cust_id, a.avail_balance FROM account a RIGHT OUTER JOIN product p ON p.product_cd = a.product_cd ORDER BY p.product_cd, a.account_id, a.cust_id ASC`)
+    return await db.query(`SELECT p.product_cd, a.account_id, a.cust_id, a.avail_balance FROM account a RIGHT OUTER JOIN product p ON p.product_cd = a.product_cd ORDER BY p.product_cd, a.account_id ASC`)
   } catch (error) {
     throw error
   }
@@ -168,7 +169,7 @@ exports.c10p2 = async () => {
 
 exports.c10p3 = async () => {
   try {
-    return await db.query(`SELECT a.account_id, a.product_cd, i.fname, i.lname, b.name FROM account a LEFT OUTER JOIN business b ON a.cust_id = b.cust_id LEFT OUTER JOIN individual i ON a.cust_id = i.cust_id ORDER BY a.account_id, a.product_cd ASC`)
+    return await db.query(`SELECT a.account_id, a.product_cd, i.fname, i.lname, b.name FROM account a LEFT OUTER JOIN business b ON a.cust_id = b.cust_id LEFT OUTER JOIN individual i ON a.cust_id = i.cust_id ORDER BY a.account_id ASC`)
   } catch (error) {
     throw error
   }

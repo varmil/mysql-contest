@@ -16,7 +16,7 @@ if [ -e $result_file ]; then
     url="http://yonno.cygames.jp:8081/users/$USERNAME/contest/mysql"
 
     # サーバーへのPUT (curl -f で失敗時に検出できるように)
-    curl -X PUT --data-binary "@${result_file}" -f $url
+    curl -X PUT --data-urlencode "tap@${result_file}" -f $url
     if [ $? = 0 ]; then
         echo "[send ok] $url"
     else

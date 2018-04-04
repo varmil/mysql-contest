@@ -1,6 +1,8 @@
 /**
  * 回答記述
- * 注）すべて１クエリで結果が返るようにしなさい。
+ * 注1）すべて１クエリで結果が返るようにしなさい。
+ * 注2) ORDER BY指定がない場合、プライマリーキーで昇順に並べ替えなさい。
+ *      ただし、2つ以上のテーブルを結合する場合はexplainを使用して、結合される順番にキーを指定しなさい。
  */
 const { promisify } = require('util')
 const db = require('./database')
@@ -62,14 +64,6 @@ exports.c5p2 = async () => {
 }
 
 exports.c5p3 = async () => {
-  try {
-    return await db.query(``)
-  } catch (error) {
-    throw error
-  }
-}
-
-exports.c6p2 = async () => {
   try {
     return await db.query(``)
   } catch (error) {

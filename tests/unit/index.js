@@ -79,7 +79,7 @@ describe(`Chapter 5`, () => {
 })
 
 describe(`Chapter 6`, () => {
-  it(`#c6p3() 個人顧客全員の姓名と行員全員の生命を検索する複合クエリを作成する。ただし、lname列、fname列の順で並べ替える。  __9`, async () => {
+  it(`#c6p3() 個人顧客全員の姓名と行員全員の姓名を検索する複合クエリを作成する。ただし、lname列、fname列の順で並べ替える。  __9`, async () => {
     const actual = await target.c6p3()
     assertDeepEqual(actual, answer.c6p3)
   })
@@ -166,7 +166,7 @@ describe(`Chapter 9`, () => {
 
 describe(`Chapter 10`, () => {
   it(`#c10p1() すべての商品名とその商品に基づく口座を全て習得するためのクエリを作成する。ただし下記の要件に従うこと。  __19`, async () => {
-    /* accountテーブルのproduct_cd列に基づいてproductテーブルをリンクする。
+    /* accountテーブルのproduct_cd列に基づいてproductテーブルを結合する。
      * その商品の口座が開かれていない場合であっても、すべての商品が含まれるようにする。
      */
     const actual = await target.c10p1()

@@ -221,3 +221,41 @@ describe(`Chapter 11`, () => {
 
 })
 
+describe(`Chapter EX`, () => {
+  it(`#cexp1() 6月に入社した行員の行員IDと姓名を取得し、lname順で並べ替える。  __24`, async () => {
+    const actual = await target.cexp1()
+    assertDeepEqual(actual, answer.cexp1)
+  })
+
+  it(`#cexp2() 口座が開設された年ごとの平均残高を取得し、開設年順で並べ替える。なお年は4桁表示すること。  __25`, async () => {
+    const actual = await target.cexp2()
+    assertDeepEqual(actual, answer.cexp2)
+  })
+
+  it(`#cexp3() accountテーブルから1番口座の残高の多い口座の口座ID、商品コード、顧客ID、口座の残高を取得する。 __26`, async () => {
+    const actual = await target.cexp3()
+    assertDeepEqual(actual, answer.cexp3)
+  })
+
+  it(`#cexp4() 部下を持つが、上司を持たない行員の行員IDと姓名を取得する。 __27`, async () => {
+    const actual = await target.cexp4()
+    assertDeepEqual(actual, answer.cexp4)
+  })
+
+  it(`#cexp5() 各行員の行員IDと姓名、部下の数(subordinate_num)を取得し、部下の数で降順、行員IDで昇順の優先順位で並び替える。なお、部下を持たない行員のsubordinate_numは0と表記する。 __28`, async () => {
+    const actual = await target.cexp5()
+    assertDeepEqual(actual, answer.cexp5)
+  })
+
+  it(`#cexp6() 口座の口座ID、商品名、開設した行員名、口座残高を、口座残高が多い上から3件を取得する。なお、解説した行員名は「fname lname」のように1つのカラムに入れること。 __29`, async () => {
+    const actual = await target.cexp6()
+    assertDeepEqual(actual, answer.cexp6)
+  })
+
+  it(`#cexp7() 口座の口座ID、商品コード、商品名、口座の顧客タイプ、顧客名(Bならbusinessのname、Iならindividualのfnameとlnameを「fname lname」の形で取得)、口座残高、同一商品の総口座残高におけるその口座残高が締めるパーセントを表示せよ。
+  なお、商品コード昇順、パーセント降順、口座ID昇順の優先順位で並び替え、パーセントは小数第1位までを示せ。 __30`, async () => {
+      const actual = await target.cexp7()
+      assertDeepEqual(actual, answer.cexp7)
+    })
+
+})

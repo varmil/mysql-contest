@@ -46,3 +46,59 @@ exports.c10p3 = [{ "account_id": 1, "product_cd": "CHK", "fname": "James", "lnam
 exports.c11p1 = [{ "emp_id": 1, "title": "Management" }, { "emp_id": 2, "title": "Management" }, { "emp_id": 3, "title": "Management" }, { "emp_id": 4, "title": "Operations" }, { "emp_id": 5, "title": "Management" }, { "emp_id": 6, "title": "Operations" }, { "emp_id": 7, "title": "Operations" }, { "emp_id": 8, "title": "Operations" }, { "emp_id": 9, "title": "Operations" }, { "emp_id": 10, "title": "Operations" }, { "emp_id": 11, "title": "Operations" }, { "emp_id": 12, "title": "Operations" }, { "emp_id": 13, "title": "Operations" }, { "emp_id": 14, "title": "Operations" }, { "emp_id": 15, "title": "Operations" }, { "emp_id": 16, "title": "Operations" }, { "emp_id": 17, "title": "Operations" }, { "emp_id": 18, "title": "Operations" }]
 
 exports.c11p2 = [{ "branch_1": 8, "branch_2": 7, "branch_3": 3, "branch_4": 6 }]
+
+exports.cexp1 = [{ emp_id: 17, fname: 'Beth', lname: 'Fowler' }, { emp_id: 1, fname: 'Michael', lname: 'Smith' }]
+
+exports.cexp2 = [{ Year: '2000', avail_balance: 775.17334 }, { Year: '2001', avail_balance: 1583.299988 }, { Year: '2002', avail_balance: 5393.547829 }, { Year: '2003', avail_balance: 13070.613592 }, { Year: '2004', avail_balance: 10657.351047 }]
+
+exports.cexp3 = [{ account_id: 29, product_cd: 'SBL', cust_id: 13, avail_balance: 50000 }]
+
+exports.cexp4 = [{ emp_id: 1, fname: 'Michael', lname: 'Smith' }]
+
+exports.cexp5 = [{ emp_id: 4, fname: 'Susan', lname: 'Hawthorne', subordinate_num: 5 },
+{ emp_id: 6, fname: 'Helen', lname: 'Fleming', subordinate_num: 3 },
+{ emp_id: 1, fname: 'Michael', lname: 'Smith', subordinate_num: 2 },
+{ emp_id: 10, fname: 'Paula', lname: 'Roberts', subordinate_num: 2 },
+{ emp_id: 13, fname: 'John', lname: 'Blake', subordinate_num: 2 },
+{ emp_id: 16, fname: 'Theresa', lname: 'Markham', subordinate_num: 2 },
+{ emp_id: 3, fname: 'Robert', lname: 'Tyler', subordinate_num: 1 },
+{ emp_id: 2, fname: 'Susan', lname: 'Barker', subordinate_num: 0 },
+{ emp_id: 5, fname: 'John', lname: 'Gooding', subordinate_num: 0 },
+{ emp_id: 7, fname: 'Chris', lname: 'Tucker', subordinate_num: 0 },
+{ emp_id: 8, fname: 'Sarah', lname: 'Parker', subordinate_num: 0 },
+{ emp_id: 9, fname: 'Jane', lname: 'Grossman', subordinate_num: 0 },
+{ emp_id: 11, fname: 'Thomas', lname: 'Ziegler', subordinate_num: 0 },
+{ emp_id: 12, fname: 'Samantha', lname: 'Jameson', subordinate_num: 0 },
+{ emp_id: 14, fname: 'Cindy', lname: 'Mason', subordinate_num: 0 },
+{ emp_id: 15, fname: 'Frank', lname: 'Portman', subordinate_num: 0 },
+{ emp_id: 17, fname: 'Beth', lname: 'Fowler', subordinate_num: 0 },
+{ emp_id: 18, fname: 'Rick', lname: 'Tulman', subordinate_num: 0 }]
+
+exports.cexp6 = [{ account_id: 29, avail_balance: 50000, product_name: 'small business loan', employee_name: 'John Blake' },
+{ account_id: 28, avail_balance: 38552.05, product_name: 'checking account', employee_name: 'Theresa Markham' },
+{ account_id: 24, avail_balance: 23575.12, product_name: 'checking account', employee_name: 'Theresa Markham' }]
+
+exports.cexp7 = [{ account_id: 27, product_cd: 'BUS', product_name: 'business line of credit', cust_type_cd: 'B', cust_name: 'Northeast Cooling Inc.', avail_balance: 9345.55, percent: 100 },
+{ account_id: 25, product_cd: 'BUS', product_name: 'business line of credit', cust_type_cd: 'B', cust_name: 'Chilton Engineering', avail_balance: 0, percent: 0 },
+{ account_id: 15, product_cd: 'CD', product_name: 'certificate of deposit', cust_type_cd: 'I', cust_name: 'John Spencer', avail_balance: 10000, percent: 51.3 },
+{ account_id: 17, product_cd: 'CD', product_name: 'certificate of deposit', cust_type_cd: 'I', cust_name: 'Margaret Young', avail_balance: 5000, percent: 25.6 },
+{ account_id: 3, product_cd: 'CD', product_name: 'certificate of deposit', cust_type_cd: 'I', cust_name: 'James Hadley', avail_balance: 3000, percent: 15.4 },
+{ account_id: 23, product_cd: 'CD', product_name: 'certificate of deposit', cust_type_cd: 'I', cust_name: 'Richard Farley', avail_balance: 1500, percent: 7.7 },
+{ account_id: 28, product_cd: 'CHK', product_name: 'checking account', cust_type_cd: 'B', cust_name: 'Superior Auto Body', avail_balance: 38552.05, percent: 52.8 },
+{ account_id: 24, product_cd: 'CHK', product_name: 'checking account', cust_type_cd: 'B', cust_name: 'Chilton Engineering', avail_balance: 23575.12, percent: 32.3 },
+{ account_id: 18, product_cd: 'CHK', product_name: 'checking account', cust_type_cd: 'I', cust_name: 'Louis Blake', avail_balance: 3487.19, percent: 4.8 },
+{ account_id: 4, product_cd: 'CHK', product_name: 'checking account', cust_type_cd: 'I', cust_name: 'Susan Tingley', avail_balance: 2258.02, percent: 3.1 },
+{ account_id: 13, product_cd: 'CHK', product_name: 'checking account', cust_type_cd: 'I', cust_name: 'Charles Frasier', avail_balance: 2237.97, percent: 3.1 },
+{ account_id: 1, product_cd: 'CHK', product_name: 'checking account', cust_type_cd: 'I', cust_name: 'James Hadley', avail_balance: 1057.75, percent: 1.4 },
+{ account_id: 7, product_cd: 'CHK', product_name: 'checking account', cust_type_cd: 'I', cust_name: 'Frank Tucker', avail_balance: 1057.75, percent: 1.4 },
+{ account_id: 10, product_cd: 'CHK', product_name: 'checking account', cust_type_cd: 'I', cust_name: 'John Hayward', avail_balance: 534.12, percent: 0.7 },
+{ account_id: 14, product_cd: 'CHK', product_name: 'checking account', cust_type_cd: 'I', cust_name: 'John Spencer', avail_balance: 122.37, percent: 0.2 },
+{ account_id: 21, product_cd: 'CHK', product_name: 'checking account', cust_type_cd: 'I', cust_name: 'Richard Farley', avail_balance: 125.67, percent: 0.2 },
+{ account_id: 22, product_cd: 'MM', product_name: 'money market account', cust_type_cd: 'I', cust_name: 'Richard Farley', avail_balance: 9345.55, percent: 54.8 },
+{ account_id: 12, product_cd: 'MM', product_name: 'money market account', cust_type_cd: 'I', cust_name: 'John Hayward', avail_balance: 5487.09, percent: 32.2 },
+{ account_id: 8, product_cd: 'MM', product_name: 'money market account', cust_type_cd: 'I', cust_name: 'Frank Tucker', avail_balance: 2212.5, percent: 13 },
+{ account_id: 11, product_cd: 'SAV', product_name: 'savings account', cust_type_cd: 'I', cust_name: 'John Hayward', avail_balance: 767.77, percent: 41.4 },
+{ account_id: 2, product_cd: 'SAV', product_name: 'savings account', cust_type_cd: 'I', cust_name: 'James Hadley', avail_balance: 500, percent: 26.9 },
+{ account_id: 19, product_cd: 'SAV', product_name: 'savings account', cust_type_cd: 'I', cust_name: 'Louis Blake', avail_balance: 387.99, percent: 20.9 },
+{ account_id: 5, product_cd: 'SAV', product_name: 'savings account', cust_type_cd: 'I', cust_name: 'Susan Tingley', avail_balance: 200, percent: 10.8 },
+{ account_id: 29, product_cd: 'SBL', product_name: 'small business loan', cust_type_cd: 'B', cust_name: 'AAA Insurance Inc.', avail_balance: 50000, percent: 100 }]

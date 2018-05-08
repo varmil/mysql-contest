@@ -12,13 +12,17 @@ npm i
 docker-compose up -d
 ```
 
-### run tests
+### run tests in local
 ```sh
 # basic
 docker-compose run --rm mocha npm run test
 ```
-* `--watch` is useful for development
-* `--exit` is workaround (the issue of not exiting mocha)
+
+
+### to send results
+```sh
+./test-and-send.sh
+```
 
 ### schema
 |  テーブル名  | 定義                                      |

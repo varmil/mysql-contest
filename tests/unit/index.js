@@ -252,8 +252,7 @@ describe(`Chapter EX`, () => {
     assertDeepEqual(actual, answer.cexp6)
   })
 
-  it(`#cexp7() 口座の口座ID、商品コード、商品名、口座の顧客タイプ、顧客名(Bならbusinessのname、Iならindividualのfnameとlnameを「fname lname」の形で取得)、口座残高、同一商品の総口座残高におけるその口座残高が締めるパーセントを表示せよ。
-  なお、商品コード昇順、パーセント降順、口座ID昇順の優先順位で並び替え、パーセントは小数第1位までを示せ。 __30`, async () => {
+  it(`#cexp7() 口座の口座ID、商品コード、商品名、口座の顧客タイプ、顧客名(Bならbusinessのname、Iならindividualのfnameとlnameを「fname lname」の形で取得)、口座残高、同一商品の総口座残高におけるその口座残高が締めるパーセントを表示せよ。なお、商品コード昇順、パーセント降順、口座ID昇順の優先順位で並び替え、パーセントは小数第1位までを示せ。 __30`, async () => {
       const actual = await target.cexp7()
       assertDeepEqual(actual, answer.cexp7)
     })
